@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aotuspace.aotucms.web.spdictionary.hbm.livestation">
+    <class name="SpLivestationInfo" table="sp_livestation_info">
+        <id name="spId" column="sp_id" type="short">
+            <generator class="native" />
+        </id>
+        <property name="spLiStationN" column="sp_LiStationN" type="string">
+        </property>
+        
+    </class>
+</hibernate-mapping>

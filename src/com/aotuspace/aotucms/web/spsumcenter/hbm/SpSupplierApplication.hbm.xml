@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aotuspace.aotucms.web.spsumcenter.hbm">
+	<class name="SpSupplierApplication" table="sp_supplier_application">
+		<id name="spId" column="sp_id" type="integer">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="spSusup" column="sp_SuSup" type="string"></property>
+		<property name="spSucont" column="sp_SuCont" type="string"></property>
+		<property name="spSutel" column="sp_SuTel" type="string"></property>
+		<property name="spSumobie" column="sp_SuMobie" type="string"></property>
+		<property name="spSudistrict" column="sp_SuDistrict" type="string"></property>
+		<property name="spSuaddress" column="sp_SuAddress" type="string"></property>
+		<property name="spSutraid" column="sp_SuTraId" type="integer"></property>
+		
+	</class>  
+
+</hibernate-mapping>

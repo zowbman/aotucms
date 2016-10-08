@@ -1,0 +1,13 @@
+[{
+"id" : 1,
+"text" : "系统管理中心",
+"iconCls" : "icon-save",
+"children" : [
+				{"text" : "系统管理员管理","state" : "open","url" : "sysmm_list"},
+			 	{"text" : "系统角色管理","state" : "open","url" : "manager"},
+			 	{"text" : "系统操作权限管理","state" : "open","url" : "manager"},
+			 	{"text" : "系统角色权限管理","state" : "open","url" : "manager"},
+			 	{"text" : "数据库备份、恢复","state" : "open","url" : "manager"},
+			 	{"text" : "网站日志","state" : "open","url" : "manager"}
+			 ]
+}]

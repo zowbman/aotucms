@@ -1,0 +1,116 @@
+.textbox{
+	height: 22px;
+	padding: 0 2px;
+}
+
+.textarea{
+	line-height:22px;
+	font-family: Arial;
+	height: 50px;
+	min-width:520px;
+	max-width: 520px;
+	overflow:scroll;
+	overflow-x:hidden;
+}
+#aoturole_add .save_table,#aoturole_edit .save_table{
+	font-size: 12px;
+	background: rgb(237, 244, 255);
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+#aoturole_add .save_table td,#aoturole_edit .save_table td{
+	height: 36px;
+	width:100px;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 10px;
+}
+
+#aoturole_add .save_table th,#aoturole_edit .save_table th{
+	height: 36px;
+	width:80px;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	background: rgb(215, 229, 250);
+	font-weight: normal;
+	text-align: left;
+	padding:0 0 0 10px;
+}
+
+#aoturole_user #role_name{
+	border-bottom:1px solid #95B8E7;
+	margin-bottom:20px;
+	padding-bottom:5px;
+}
+
+#aoturole_user #role_mark{
+	margin-bottom:10px;
+}
+
+#aoturole_user #role_name span{
+	padding-left:48px;
+	font-weight:bold;
+	font-size:14px;
+	color:#666;
+}
+
+#aoturole_user #role_mark input{
+	width:434px;
+	color:#666;
+}
+
+#user_groups{
+	width:476px;
+	line-height:30px;
+	height:195px;
+	padding:5px;
+}
+
+#aoturole_user #aoturole_user_content #tool{
+	margin-top:5px;
+}
+
+#aoturole_addUser #alluser .ul_users {
+	list-style:none;
+	padding-left:0;
+	margin-top:-10px;
+}
+
+#aoturole_addUser #alluser .ul_users li {
+	display:inline; 
+	float:left; 
+	margin-right:50px; 
+	white-space:nowrap; 
+	line-height:25px;
+}
+
+#aotuuserrolepriv_set #hint{
+	display:block;
+	background: #fffee6;
+	height:42px;
+	/* margin:5px; */
+	/* position: fixed; */
+	width:100%;
+}
+
+#aotuuserrolepriv_set #hint span{
+	line-height: 40px;
+	color: #8f5700;
+	margin-left:10px;
+}
+
+#aotuuserrolepriv_set #hint span a{
+	display:none;
+	margin-left:10px;
+	color: #fff;
+	background: #42C969;
+	/* display: inline; */
+	padding:6px 15px;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+.datebox-button td{
+	text-align: center;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aotuspace.aotucms.web.spdictionary.hbm.bank">
+    <class name="SpBankRegion" table="sp_bank_region">
+        <id name="id" column="id" type="integer">
+            <generator class="native" />
+        </id>
+        
+        <property name="name" column="name" type="string">
+        </property>
+        <property name="level" column="level" type="integer">
+        </property>
+        
+        <set name="spBankRegionsChildren" fetch="select">
+        	<key column="pid"></key>
+        	<one-to-many class="SpBankRegion"/>
+        </set>
+        
+    </class>
+</hibernate-mapping>

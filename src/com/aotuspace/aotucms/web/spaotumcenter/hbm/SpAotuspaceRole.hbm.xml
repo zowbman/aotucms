@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aotuspace.aotucms.web.spaotumcenter.hbm">
+	<class name="SpAotuspaceRole" table="sp_aotuspace_role" dynamic-insert="true">
+		 <id name="spId" column="sp_id" type="integer" >
+			<generator class="native"/>
+		</id>
+		<property name="spRolename" column="sp_RoleName" type="string"></property>
+		
+		<!-- 岗位表  对  用户的多对多 -->
+  		<set name="spUsersBinfos"  table="sp_aotuspace_user_role" >
+			<key column="sp_RoleId"></key>
+			<many-to-many class="SpUsersBinfo">
+				<column name="sp_id"></column>
+				<column name="sp_UserId"></column>
+			</many-to-many>
+		</set>
+		
+		<!-- spAotuspaceRole属性，本类与SpAotuspaceRole(上级)的多对一 -->
+		<many-to-one name="spAotuspaceRoleparent" class="SpAotuspaceRole" column="sp_ParentRId" lazy="false"></many-to-one>
+		
+		<!-- spAotuspaceRolechildren属性，本类与SpAotuspaceRole(下级)的一对多 -->
+		<set name="spAotuspaceRolechildren">
+			<key column="sp_ParentRId"></key>
+			<one-to-many class="SpAotuspaceRole"/>
+		</set>
+		
+		<!-- spUsersRolePrivileges属性, 本类与SpAotuspacePriv的多对多 -->
+	 	<set name="spUsersRolePrivileges" table="sp_aotuspace_role_priv">
+			<key column="sp_RoleId"></key>
+			<many-to-many class="SpAotuspacePriv" column="sp_PrivId"></many-to-many>
+		</set>
+		
+	</class>  
+
+</hibernate-mapping>

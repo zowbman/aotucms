@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.aotuspace.aotucms.web.spaotumcenter.hbm">
+	<class name="SpAotuspacePriv" table="sp_aotuspace_priv" dynamic-insert="true">
+	    <id name="spId" column="sp_id">
+			<generator class="native"/>
+		</id>
+		<property name="spName" column="sp_Name" type="string"></property>
+		<property name="spUrl" column="sp_Url" type="string"></property>
+		<!-- <property name="spState" column="sp_State" type="string"></property> -->
+		
+		<!-- 用户-权限 -->
+		<set name="spUsers" table="sp_aotuspace_users_priv">
+			<key column="sp_PrivId"></key>
+			<many-to-many class="SpUsersBinfo">
+				<column name="sp_id"></column>
+				<column name="sp_UsersId"></column>
+			</many-to-many>
+		</set>
+				 
+		<!-- 身份-权限 -->
+		<set name="spUserIdents" table="sp_aotuspace_uiden_priv">
+			<key column="sp_PrivId"></key>
+			<many-to-many class="SpUsersIdentity" column="sp_IdentId"></many-to-many>
+		</set>
+		
+		<!-- 角色-权限 -->
+		<set name="spUserRoles" table="sp_aotuspace_role_priv">
+			<key column="sp_PrivId"></key>
+			<many-to-many class="SpAotuspaceRole" column="sp_RoleId"></many-to-many>
+		</set>
+				 
+		<!-- privParent属性，本类与SpAotuspacePriv(上级)的多对一 -->
+	    <many-to-one name="privParent"  class="SpAotuspacePriv" column="sp_Pid" lazy="false"></many-to-one>
+		
+		<!-- privsChildren属性，本类与SpAotuspacePriv(下级)的一对多 -->
+		<set name="privsChildren">
+			<key column="sp_Pid"></key>
+			<one-to-many class="SpAotuspacePriv"/>
+		</set>
+	</class>  
+
+</hibernate-mapping>

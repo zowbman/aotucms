@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aotuspace.aotucms.web.spaotumcenter.hbm">
+	<class name="SpAnchorApplication" table="sp_anchor_application" >
+		<id name="spId" column="sp_id" type="integer" >
+			<generator class="native"/>
+		</id>
+		<property name="spAtuid" column="sp_AtuId" type="integer"></property>
+		<many-to-one name="spLivestationInfo" class="com.aotuspace.aotucms.web.spdictionary.hbm.livestation.SpLivestationInfo" column="sp_LiStation"></many-to-one>
+		<property name="spLiSrc" column="sp_LiSrc" type="string"></property>
+		<property name="spLinickname" column="sp_LiNickName" type="string"></property>
+		<property name="spLiscreensort" column="sp_LiScreenSort" type="string"></property>
+		<many-to-one name="spApplicationResult" class="SpApplicationResult" column="sp_AppResult"></many-to-one>
+		<many-to-one name="spAnchorApplicationDetail" class="SpAnchorApplicationDetail" column="sp_ApplicationDetailId" cascade="all"></many-to-one>
+		<property name="spApplydate" column="sp_ApplyDate" type="date"></property>
+	</class>  
+
+</hibernate-mapping>

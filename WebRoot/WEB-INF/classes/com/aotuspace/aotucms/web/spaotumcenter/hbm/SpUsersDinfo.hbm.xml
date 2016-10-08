@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aotuspace.aotucms.web.spaotumcenter.hbm">
+	<class name="SpUsersDinfo" table="sp_users_dinfo" dynamic-insert="true">
+		<composite-id name="spUsersBinfoKey" class="com.aotuspace.aotucms.web.spaotumcenter.hbm.SpUsersBinfoKey">
+			<!-- key-property标签表示哪一些属性对应复合主键 -->
+			<key-property name="spId" column="sp_id"></key-property>
+			<key-property name="spAtuid" column="sp_AtuId"></key-property>
+		</composite-id>
+		<property name="spNickname" column="sp_NickName" type="string"></property>
+		<property name="spIcon" column="sp_Icon" type="string"></property>
+		<property name="spRealname" column="sp_RealName" type="string"></property>
+		<property name="spSex" column="sp_Sex" type="string"></property>
+		<property name="spBirth" column="sp_Birth" type="date"></property>
+		<property name="spAnimal" column="sp_Animal" type="integer"></property>
+		<property name="spAge" column="sp_Age" type="integer"></property>
+		<property name="spCon" column="sp_Con" type="integer"></property>
+		<!-- <property name="spCountry" column="sp_Country" type="integer"></property>
+		<property name="spProvince" column="sp_Province" type="integer"></property>
+		<property name="spCity" column="sp_City" type="integer"></property>
+		<property name="spArea" column="sp_Area" type="integer"></property> -->
+		<property name="spUserdistrict" column="sp_UserDistrict" type="string"></property>
+		<property name="spAddress" column="sp_Address" type="string"></property>
+	</class>  
+</hibernate-mapping>

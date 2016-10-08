@@ -1,0 +1,68 @@
+.textbox{
+	height: 22px;
+	padding: 0 2px;
+}
+
+.textarea{
+	line-height:22px;
+	font-family: Arial;
+	height: 50px;
+	min-width:520px;
+	max-width: 520px;
+	overflow:scroll;
+	overflow-x:hidden;
+}
+#aotuuserident_add .save_table,#aotuuserident_edit .save_table{
+	font-size: 12px;
+	background: rgb(237, 244, 255);
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+#aotuuserident_add .save_table td,#aotuuserident_edit .save_table td{
+	height: 36px;
+	/* width:100px; */
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 10px;
+}
+
+ #aotuuserident_add .save_table th,#aotuuserident_edit .save_table th{
+	height: 36px;
+    width:80px; 
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	background: rgb(215, 229, 250);
+	font-weight: normal;
+	text-align: left;
+	padding:0 0 0 10px;
+}
+.datebox-button td{
+	text-align: center;
+}
+
+#aotuuseridentpriv_set #hint{
+	display:block;
+	background: #fffee6;
+	height:42px;
+	/* margin:5px; */
+	/* position: fixed; */
+	width:100%;
+}
+
+#aotuuseridentpriv_set #hint span{
+	line-height: 40px;
+	color: #8f5700;
+	margin-left:10px;
+}
+
+#aotuuseridentpriv_set #hint span a{
+	display:none;
+	margin-left:10px;
+	color: #fff;
+	background: #42C969;
+	/* display: inline; */
+	padding:6px 15px;
+	font-weight:bold;
+	text-decoration: none;
+}

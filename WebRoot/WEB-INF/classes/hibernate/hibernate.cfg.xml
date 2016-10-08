@@ -1,0 +1,77 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 1，数据库连接信息 -->
+		<property name="dialect"><!-- org.hibernate.dialect.SQLServerDialect sqlServer的方言 -->
+			org.hibernate.dialect.MySQLDialect<!-- mysql的方言 -->
+		</property>
+
+		<!--2，其他配置 -->
+		<property name="show_sql">true</property>
+		<!-- <property name="hbm2ddl.auto">update</property> -->
+
+		<!-- 3，导入映射文件 -->
+
+		<!-- 用户 -->
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpUsersBinfo.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpUsersDinfo.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpUsersIdentity.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpUsersStatus.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpAotuspaceRole.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpAotuspacePriv.hbm.xml" />
+		<!-- 代言主播 -->
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpAnchorApplication.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpArtistApplication.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpAnchorApplicationDetail.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpApplicationResult.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpAnchorBinfo.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spaotumcenter/hbm/SpAnchorDetail.hbm.xml" />
+
+		<!-- 员工 -->
+		<mapping
+			resource="com/aotuspace/aotucms/web/spsysmcenter/hbm/SpEmployeeBinfo.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spsysmcenter/hbm/SpEmployeeStation.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spsysmcenter/hbm/SpEmployeePrivilege.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spsysmcenter/hbm/SpEmployeeDepart.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spsysmcenter/hbm/SpEmployeeDinfo.hbm.xml" />
+
+		<!-- 供应商 -->
+		<mapping
+			resource="com/aotuspace/aotucms/web/spsumcenter/hbm/SpSupplierBinfo.hbm.xml" />
+	 	<mapping
+			resource="com/aotuspace/aotucms/web/spsumcenter/hbm/SpSupplierDinfo.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spsumcenter/hbm/SpSupplierApplication.hbm.xml" />
+			
+		<!-- 字典 -->
+		<!-- 银行 -->
+		 <mapping
+			resource="com/aotuspace/aotucms/web/spdictionary/hbm/bank/SpBankBranch.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spdictionary/hbm/bank/SpBanks.hbm.xml" />
+		<mapping
+			resource="com/aotuspace/aotucms/web/spdictionary/hbm/bank/SpBankRegion.hbm.xml" />
+		<!-- 直播平台 -->
+		<mapping
+			resource="com/aotuspace/aotucms/web/spdictionary/hbm/livestation/SpLivestationInfo.hbm.xml" />
+			
+	</session-factory>
+</hibernate-configuration>

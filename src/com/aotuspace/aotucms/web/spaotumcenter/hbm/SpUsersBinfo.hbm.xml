@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aotuspace.aotucms.web.spaotumcenter.hbm">
+	<class name="SpUsersBinfo" table="sp_users_binfo" dynamic-insert="true">
+		<composite-id name="spUsersBinfoKey" class="com.aotuspace.aotucms.web.spaotumcenter.hbm.SpUsersBinfoKey">
+			<!-- key-property标签表示哪一些属性对应复合主键 -->
+			<key-property name="spId" column="sp_id"></key-property>
+			<key-property name="spAtuid" column="sp_AtuId"></key-property>
+		</composite-id>
+		
+		<property name="spAccount" column="sp_Account" type="string"></property>
+		<property name="spPassword" column="sp_Password" type="string"></property>
+		<property name="spRedate" column="sp_ReDate" type="timestamp"></property>
+		<property name="spReplace" column="sp_RePlace" type="string"></property>
+		<property name="spReip" column="sp_ReIp" type="string"></property>
+		
+		<!-- 账号状态 -->
+		<many-to-one name="spUsersStatus" column="Sp_Status" class="SpUsersStatus"></many-to-one>
+		
+		<!-- 用户身份 -->
+	  	<many-to-one name="spUsersIdentity" class="SpUsersIdentity" column="sp_Identity" lazy="false"></many-to-one>
+		
+		<!-- spAotuspaceRoles属性， 用户表   对   角色    的多对多 -->
+ 	 	<set name="spAotuspaceRoles" table="sp_aotuspace_user_role" lazy="false">
+			<key>
+				<column name="sp_id"></column>
+				<column name="sp_UserId"></column>
+			</key>
+			<many-to-many class="SpAotuspaceRole" column="sp_RoleId" ></many-to-many>
+		</set>
+		
+		<!-- spUsersPrivileges属性, 本类与SpAotuspacePriv的多对多 -->
+	 	<set name="spUsersPrivileges" table="sp_aotuspace_users_priv">
+			<key>
+				<column name="sp_id"></column>
+				<column name="sp_UsersId"></column>
+			</key>
+			<many-to-many class="SpAotuspacePriv" column="sp_PrivId"></many-to-many>
+		</set>
+		
+		<!-- 用户详细信息 -->
+		<one-to-one name="spUsersDinfo" class="SpUsersDinfo" lazy="false" cascade="all">
+		</one-to-one>
+	</class>  
+
+</hibernate-mapping>

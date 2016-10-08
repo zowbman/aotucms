@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.aotuspace.aotucms.web.spaotumcenter.hbm">
+    <class name="SpAnchorDetail" table="sp_anchor_detail" dynamic-insert="true">
+        <id name="spId" column="sp_id" type="integer">
+            <generator class="native"></generator>
+        </id>
+        
+        <many-to-one name="spBankRegion" column="sp_AncDistrict" class="com.aotuspace.aotucms.web.spdictionary.hbm.bank.SpBankRegion" fetch="select">
+        </many-to-one>
+        
+        <many-to-one name="spBankBranch" column="sp_BaBranch" class="com.aotuspace.aotucms.web.spdictionary.hbm.bank.SpBankBranch" fetch="select">
+        </many-to-one>
+        
+        <many-to-one name="spBanks" column="sp_Bank" class="com.aotuspace.aotucms.web.spdictionary.hbm.bank.SpBanks" fetch="select">
+        </many-to-one>
+        
+        <property name="spRealname" column="sp_RealName" type="string">
+        </property>
+        
+        <property name="spMobie" column="sp_Mobie" type="string">
+        </property>
+        
+        <property name="spIdnum" column="sp_IdNum" type="string">
+        </property>
+        
+        <property name="spIdnumsort" column="sp_IdNumSort" type="string">
+        </property>
+        
+        <property name="spBankusername" column="sp_BankUserName" type="string">
+        </property>
+        
+        <property name="spBaid" column="sp_BaId" type="long">
+        </property>
+        
+    </class>
+</hibernate-mapping>

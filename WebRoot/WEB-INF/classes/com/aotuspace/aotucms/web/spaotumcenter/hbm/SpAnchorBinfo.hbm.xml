@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aotuspace.aotucms.web.spaotumcenter.hbm">
+	<class name="SpAnchorBinfo" table="sp_anchor_binfo" dynamic-insert="true">
+		<id name="spId" column="sp_id" type="integer" >
+			<generator class="foreign">
+				<param name="property">spAnchorDetail</param>
+			</generator>
+		</id>
+		<property name="spAtuid" column="sp_AtuId" type="integer"></property>
+		<property name="spResume" column="sp_Resume" type="string"></property>
+		<one-to-one name="spAnchorDetail" class="SpAnchorDetail" cascade="all" constrained="true"></one-to-one>
+	</class>  
+
+</hibernate-mapping>

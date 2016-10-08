@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 配置为开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 把扩展名配置为action -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- 把主题设置为simple -->
+	<constant name="struts.ui.theme" value="simple" />
+	
+	<package name="default" namespace="/" extends="json-default">
+	<interceptors>
+		<!-- 声明拦截器 -->
+		<interceptor name="checkPrivilege"
+			class="com.aotuspace.aotucms.web.util.CheckPrivilegeInterceptor"></interceptor>
+		<!-- 重新定义默认的拦截器栈 -->
+		<interceptor-stack name="defaultStack">
+			<interceptor-ref name="checkPrivilege"></interceptor-ref><!-- 权限拦截 -->
+			<interceptor-ref name="json"/>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</interceptor-stack>
+	</interceptors>
+	
+	<global-results>
+		<!-- 无权限的提示页面 -->
+		<result name="noPrivilegeError">/WEB-INF/jsp/pub/noPriv.jsp</result>
+	</global-results>
+	
+		<!-- 测试用的 -->
+		<action name="test" class="testAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<!-- aotucms入口 -->
+		<action name="aotucms_*" class="aotucmsAction" method="{1}">
+			<result name="aotucms_login">/WEB-INF/jsp/aotucms_login.jsp</result>
+			<result name="aotucms_admin">/WEB-INF/jsp/aotucms_admin.jsp</result>
+		</action>
+		
+		<!-- 系统管理中心 -->
+		<!-- 用户管理 -->
+		<action name="sysmm_*" class="sysMMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/sysMCenter/sys_MM.jsp</result>
+			<result name="detail">/WEB-INF/jsp/sysMCenter/sys_MM_detail.jsp</result>
+		</action>
+		
+		<!-- 部门管理 -->
+		<action name="sysdm_*" class="sysDMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/sysMCenter/sys_DM.jsp</result>
+		</action>
+
+		<!-- 角色管理 -->
+		<action name="sysrm_*" class="sysRMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/sysMCenter/sys_RM.jsp</result>
+		</action>
+		
+		<!-- 权限管理 -->
+		<action name="syspm_*" class="sysPMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/sysMCenter/sys_PM.jsp</result>
+		</action>
+		
+		<!-- 角色权限管理 -->
+		<action name="sysrpm_*" class="sysRPMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/sysMCenter/sys_RPM.jsp</result>
+		</action>
+		
+		<!-- 供应商管理中心 -->
+		<!-- 供应商管理 -->
+		<action name="aotusum_*" class="sysUMMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/sysuMCenter/sysu_MM.jsp</result>
+			<result name="detail">/WEB-INF/jsp/sysuMCenter/sysu_MM_detail.jsp</result>
+		</action>
+		
+		<!-- 申请供应商管理 -->
+		<action name="aotusuam_*" class="sysUAMAction" method="{1}">
+			<result name="index">/WEB-INF/jsp/sysuMCenter/sysu_AM.jsp</result>
+			<result name="application">/WEB-INF/jsp/sysuMCenter/AM/sysu_AM_application.jsp</result>
+		</action>
+		
+		<!-- 凹凸空间管理中心 -->
+		<!-- 用户管理 -->
+		<action name="aotuum_*" class="aotuUMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/aotuMCenter/aotu_UM.jsp</result>
+			<result name="detail">/WEB-INF/jsp/aotuMCenter/aotu_UM_detail.jsp</result>
+		</action>
+		
+		<!-- 用户身份管理 -->
+		<action name="aotuuim_*" class="aotuUIMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/aotuMCenter/aotu_UIM.jsp</result>
+		</action>
+		
+		<!-- 角色管理 -->
+		<action name="aoturm_*" class="aotuRMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/aotuMCenter/aotu_RM.jsp</result>
+		</action>
+		
+		<!-- 权限管理 -->
+		<action name="aotupm_*" class="aotuPMAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/aotuMCenter/aotu_PM.jsp</result>
+		</action>
+		
+		<!-- 代言主播管理 -->
+		<action name="aotuam_*" class="aotuAMAction" method="{1}">
+			<result name="index">/WEB-INF/jsp/aotuMCenter/aotu_AM.jsp</result>
+			<result name="application">/WEB-INF/jsp/aotuMCenter/AM/aotu_AM_application.jsp</result>
+			<result name="userDetail">/WEB-INF/jsp/aotuMCenter/AM/aotu_AM_user_detail.jsp</result>
+		</action>
+		
+		<!-- 普通代言主播 -->
+		<action name="aotuaanm_*" class="aotuAANMAction" method="{1}">
+			<result name="applicationDetail">/WEB-INF/jsp/aotuMCenter/AM/aotu_AM_application_detail.jsp</result>
+			<result name="addForm">/WEB-INF/jsp/aotuMCenter/AM/addForm/aotu_AM_application_addform.jsp</result>
+		</action>
+		
+		<!-- 其他代言主播 -->
+		<action name="aotuaarm_*" class="aotuAARMAction" method="{1}">
+			<result name="applicationArtistDetail">/WEB-INF/jsp/aotuMCenter/AM/aotu_AM_application_artist_detail.jsp</result>
+			<result name="addForm">/WEB-INF/jsp/aotuMCenter/AM/addForm/aotu_AM_application_artist_addform.jsp</result>
+		</action>
+		
+		<!-- 字典 -->
+		<action name="aotudic_*" class="aotuDictionaryAction" method="{1}">
+		</action>
+		
+		
+	</package>
+</struts>

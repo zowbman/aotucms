@@ -1,0 +1,35 @@
+[{
+        "id": 1,
+        "text": "系统管理",
+        "iconCls": "",
+        "children": {
+            "id": 4,
+            "text": "用户管理",
+            "iconCls": "",
+            "children": [
+                {
+                    "id": 16,
+                    "text": "用户修改",
+                    "iconCls": ""
+                },
+                {
+                    "id": 13,
+                    "text": "用户列表",
+                    "iconCls": ""
+                },
+                {
+                    "id": 14,
+                    "text": "用户删除",
+                    "iconCls": ""
+                },
+                {
+                    "id": 15,
+                    "text": "用户添加",
+                    "iconCls": ""
+                }
+            ],
+            
+        },
+       
+    }
+]

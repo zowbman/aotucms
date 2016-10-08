@@ -1,0 +1,90 @@
+.textbox{
+	height: 22px;
+	padding: 0 2px;
+}
+
+.textarea{
+	line-height:22px;
+	font-family: Arial;
+	height: 50px;
+	min-width:520px;
+	max-width: 520px;
+	overflow:scroll;
+	overflow-x:hidden;
+}
+#aotustation_add .save_table,#aotustation_edit .save_table{
+	font-size: 12px;
+	background: rgb(237, 244, 255);
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+#aotustation_add .save_table td,#aotustation_edit .save_table td{
+	height: 36px;
+	width:100px;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 10px;
+}
+
+#aotustation_add .save_table th,#aotustation_edit .save_table th{
+	height: 36px;
+	width:80px;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	background: rgb(215, 229, 250);
+	font-weight: normal;
+	text-align: left;
+	padding:0 0 0 10px;
+}
+
+#aotustation_empl #role_name{
+	border-bottom:1px solid #95B8E7;
+	margin-bottom:20px;
+	padding-bottom:5px;
+}
+
+#aotustation_empl #role_mark{
+	margin-bottom:10px;
+}
+
+#aotustation_empl #role_name span{
+	padding-left:48px;
+	font-weight:bold;
+	font-size:14px;
+	color:#666;
+}
+
+#aotustation_empl #role_mark input{
+	width:434px;
+	color:#666;
+}
+
+#empl_groups{
+	width:476px;
+	line-height:30px;
+	height:195px;
+	padding:5px;
+}
+
+#aotustation_empl #aotustaion_empl_content #tool{
+	margin-top:5px;
+}
+
+#aotustation_addEmpl #allempl .ul_empls {
+	list-style:none;
+	padding-left:0;
+	margin-top:-10px;
+}
+
+#aotustation_addEmpl #allempl .ul_empls li {
+	display:inline; 
+	float:left; 
+	margin-right:50px; 
+	white-space:nowrap; 
+	line-height:25px;
+}
+
+.datebox-button td{
+	text-align: center;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aotuspace.aotucms.web.spdictionary.hbm.bank">
+    <class name="SpBankBranch" table="sp_bank_branch">
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+        
+        <property name="name" column="name" type="string">
+        </property>
+        
+        <property name="address" column="address" type="string">
+        </property>
+        
+        <property name="telephone" column="telephone" type="string">
+        </property>
+        
+         <property name="proid" column="pro_id" type="integer">
+        </property>
+        
+         <property name="cityid" column="city_id" type="integer">
+        </property>
+         <property name="bankid" column="bank_id" type="integer">
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+/* ”√ªßœÍœ∏ */
+.user_detail{
+	/* padding :0 0 0 10px; */
+	margin-left:10px;
+	border-right: 1px solid #ccc;
+	background: rgb(237, 244, 255);
+}
+.user_detail td {
+	font-size : 12px;	
+	border-style: none; 
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 0 0 0 10px;
+}
+.user_detail th {
+	font-size : 12px;	
+	border-style: none; 
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 0 0 0 10px;
+	background: rgb(215, 229, 250);
+}
+.user_detail .face{
+	vertical-align:top;
+	height:100%;
+}
+.user_detail .face img{
+	height:100px;
+	width:100px; 
+	padding : 0 20px 0 0;
+}
+
+.detail-label {
+	font-weight:bold;
+	color : rgb(21, 66, 139);
+	width:80px;
+}
+.detail-value{
+	width:200px;
+}
+
+
+

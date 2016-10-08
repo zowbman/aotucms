@@ -1,0 +1,49 @@
+/* ”√ªßœÍœ∏ */
+.app_detail,.user_bdetail{
+	/* padding :0 0 0 10px; */
+	margin:10px;
+	border-right: 1px solid #ccc;
+	background: rgb(237, 244, 255);
+}
+.app_detail tr,.user_bdetail tr {
+	height: 35px;
+}
+.app_detail td,.user_bdetail td {
+	font-size : 12px;	
+	border-style: none; 
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 0 0 0 10px;
+}
+.app_detail th,.user_bdetail th {
+	color : #0E2D5F;
+	font-size : 12px;	
+	border-style: none; 
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 10px;
+	background: rgb(215, 229, 250);
+	width:70px;
+}
+.app_detail .face,.user_bdetail .face{
+	vertical-align:top;
+	height:100%;
+}
+.app_detail .face img,.user_bdetail .face img{
+	height:100px;
+	width:100px; 
+	float:left;
+	padding : 10px;
+}
+
+.app_detail-label {
+	font-weight:bold;
+	color : rgb(21, 66, 139);
+	width:100px;
+}
+.detail-value{
+	width:238px;
+}
+
+
+
